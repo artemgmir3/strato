@@ -1,9 +1,10 @@
 # A workflow to verify the build on every push to the master branch
 name: Build
-
 on:
-  push: 
-    branches: [ master ]
+  workflow_dispatch:
+  push:
+    tags:
+      - '*'
 
 jobs:
   build:

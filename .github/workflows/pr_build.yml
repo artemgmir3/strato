@@ -1,10 +1,11 @@
 # A workflow to build and upload APKs for pull requests
 name: PR Build
-
 on:
-  pull_request:
-    types: [ opened, synchronize, reopened ]
-    branches: [ master ]
+  workflow_dispatch:
+  push:
+    tags:
+      - '*'
+
 
 # Only allow the latest build to run for a given PR, and cancel any previous builds
 concurrency:
